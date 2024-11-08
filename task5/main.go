@@ -87,9 +87,11 @@ func main() {
 	}
 
 	fmt.Println(m)
+
 	m.GetDetails()
 	m.CalculateBonus()
 	m.Vacation()
 	m.PromoteEmployee()
+
 	fmt.Println(m)
 }

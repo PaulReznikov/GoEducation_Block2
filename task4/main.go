@@ -93,8 +93,10 @@ func main() {
 
 	cat.Move()
 	cat.Move()
+
 	fmt.Println(cat.Feed("meat"))
 	fmt.Println(cat.Feed("fish"))
+
 	cat.Play()
 	cat.Play()
 

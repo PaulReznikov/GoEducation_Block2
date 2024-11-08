@@ -124,6 +124,7 @@ func main() {
 
 	////fmt.Println(user.HasAccess("консоль админа"))
 	//user.SendOTP()
+
 	user.Authenticate("123")
 	user.Authenticate("12")
 	user.Authenticate("1234")
