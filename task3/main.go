@@ -109,7 +109,6 @@ func (u *User) NotificationOfDelay() string { // Как рациональней
 		for _, notification := range Notifications {
 			delayMessage += notification
 		}
-
 		return delayMessage
 
 	} else {

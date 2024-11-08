@@ -71,7 +71,6 @@ func CalculateTotalCost(products []Producter) float64 {
 	for _, product := range products {
 		total += product.GetPrice()
 	}
-
 	return total
 }
 
