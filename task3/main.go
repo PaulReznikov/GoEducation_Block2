@@ -109,6 +109,7 @@ func (u *User) NotificationOfDelay() string { // Как рациональней
 		for _, notification := range Notifications {
 			delayMessage += notification
 		}
+
 		return delayMessage
 
 	} else {
@@ -120,6 +121,7 @@ func (u *User) NotificationOfDelay() string { // Как рациональней
 // SortBooksByQuantity //////////////////////////////////////////////////////////////////////////////
 func (l *Library) SortBooksByQuantity() {
 	sort.Slice(l.Books, func(i, j int) bool {
+
 		return l.Books[i].Copies > l.Books[j].Copies
 	})
 }

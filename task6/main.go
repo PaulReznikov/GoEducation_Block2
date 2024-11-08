@@ -52,6 +52,7 @@ func (dp *DigitalProduct) GenerateLicense() {
 	key := make([]rune, 10, 10)
 
 	for i := 0; i < 10; i++ {
+
 		key[i] = rune(rand.Int31n(100))
 	}
 
