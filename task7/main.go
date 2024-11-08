@@ -175,6 +175,7 @@ func main() {
 		HungryLevel: 20,
 		Age:         1,
 	})
+
 	fmt.Println(zoo)
 	fmt.Println(zoo.CountBySpecies("Лев"))
 

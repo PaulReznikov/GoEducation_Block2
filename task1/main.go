@@ -62,6 +62,7 @@ func main() {
 		40.0,
 		100001.0,
 	}
+
 	OpelAstra.Drive(5000)
 	fmt.Println(OpelAstra.GetInfo())
 	OpelAstra.Refuel(20)

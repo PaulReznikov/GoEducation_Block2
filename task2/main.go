@@ -117,6 +117,7 @@ func min(a, b float64) float64 {
 func main() {
 	rec := Rectangle{6, 4}
 	triang := Triangle{3, 4, 5}
+
 	fmt.Println(rec.Area(), rec.Perimeter(), rec.IsLargerThan(&Rectangle{5, 5}), rec.TransformToSquare()) //??? Ресивер передаю указатель в методе для сравнения фигур, почему аргумент other просит по указателю
 	fmt.Println(FilterShapes([]Shaper{Rectangle{2, 3}, Rectangle{2, 2}, Rectangle{5, 4}, Rectangle{8, 8}}, 15))
 	fmt.Println(triang.Area())

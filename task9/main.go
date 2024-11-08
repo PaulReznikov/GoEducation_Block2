@@ -23,7 +23,7 @@ type Transaction struct {
 }
 
 func (ba *BankAccount) Deposit(amount float64) {
-	time.Sleep(2 * time.Second)
+	time.Sleep(3 * time.Second)
 	ba.Balance += amount
 	ba.Transactions = append(ba.Transactions, Transaction{
 		Operation:               "Deposit",
@@ -37,7 +37,7 @@ func (ba *BankAccount) Deposit(amount float64) {
 func (ba *BankAccount) Withdraw(amount float64) error {
 	if ba.AccountType == "Checking" {
 		if ba.Balance-(amount+amount*0.01) > 0 {
-			time.Sleep(2 * time.Second)
+			time.Sleep(3 * time.Second)
 			ba.Balance -= amount + amount*0.01
 			ba.Transactions = append(ba.Transactions, Transaction{
 				Operation:               "Withdraw",
@@ -49,7 +49,7 @@ func (ba *BankAccount) Withdraw(amount float64) error {
 			return nil
 		}
 	} else if ba.Balance-amount > 0 {
-		time.Sleep(2 * time.Second)
+		time.Sleep(3 * time.Second)
 		ba.Balance -= amount
 		ba.Transactions = append(ba.Transactions, Transaction{
 			Operation:               "Withdraw",
@@ -66,7 +66,7 @@ func (ba *BankAccount) Withdraw(amount float64) error {
 }
 
 func (ba *BankAccount) GetBalance() {
-	fmt.Printf("Баланс: %v\n", ba.Balance)
+	fmt.Printf("Баланс пользователя %v: %v\n", ba.Owner, ba.Balance)
 }
 
 func (ba *BankAccount) Transfer(to *BankAccount, amount float64) error {
@@ -125,19 +125,20 @@ func main() {
 		Transactions:    nil,
 	}
 
-	beginPeriod := time.Now()
-
 	bankAcc.GetBalance()
 	bankAcc.Deposit(1000)
+	//time.Sleep(2 * time.Second)
+	beginPeriod := time.Now()
 	bankAcc.GetBalance()
 	bankAcc.Deposit(500)
+
 	bankAcc.GetBalance()
 	bankAcc.Withdraw(500)
 	bankAcc.GetBalance()
-
+	//time.Sleep(2 * time.Second)
 	endPeriod := time.Now()
 
-	//beginPeriod := time.Date(2024, time.October, 24, 14, 59, 1, 1, time.UTC)
+	//beginPeriod := time.Date(2024, time.October, 24, 14, 11, 0, 0, time.UTC)
 
 	extract, err := bankAcc.GenerateStatement(beginPeriod, endPeriod)
 	if err != nil {

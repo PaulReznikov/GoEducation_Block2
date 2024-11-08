@@ -52,6 +52,7 @@ func (dp *DigitalProduct) GenerateLicense() {
 	key := make([]rune, 10, 10)
 
 	for i := 0; i < 10; i++ {
+
 		key[i] = rune(rand.Int31n(100))
 	}
 
@@ -70,7 +71,6 @@ func CalculateTotalCost(products []Producter) float64 {
 	for _, product := range products {
 		total += product.GetPrice()
 	}
-
 	return total
 }
 
